@@ -28,7 +28,7 @@ const HomeScreen = (props) => {
                 <View style = {styles.MainContainer}>
                     <Button 
                     title="Entry"
-                    onPress={() => props.navigation.navigate("About")}
+                    onPress={() => props.navigation.push("Home")}
                     />
                     <Button 
                     title="Explore"

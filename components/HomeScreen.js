@@ -1,22 +1,8 @@
 // Homescreen.js
-import React, { Component } from 'react';
-import { View, Text} from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-
-import { Image, StyleSheet, ImageBackground } from 'react-native';
- import {
-   SafeAreaView,
-   ScrollView,
-   StatusBar,
-   useColorScheme,
-   Button,
- } from 'react-native';
+import React from 'react';
+import {View, Button, StyleSheet, ImageBackground } from 'react-native';
 
 const HomeScreen = (props) => {
-// const HomeScreen = ({ navigation }) => {
-    const { state, navigate} = props.navigation;
-    console.log(state);
-    console.log('I HAVE ARRIVED');
 
     return (
         <View >
@@ -26,10 +12,11 @@ const HomeScreen = (props) => {
                 <View style = {styles.MainContainer}>
                     <Button 
                     title="Entry"
-                    onPress={() => props.navigation.navigate("About")}
+                    onPress={() => props.navigation.push("Entry")}
                     />
                     <Button 
                     title="Explore"
+                    onPress={() => props.navigation.push("Dummy")}
                     />
                     <Button 
                     title="Interact"
@@ -52,17 +39,3 @@ const styles = StyleSheet.create({
  });
 
 export default HomeScreen;
-
-// export default class Homescreen extends Component {
-//   render() {
-//     return (
-//       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//         <Text>Home Screen</Text>
-//           <Button
-//           title="Go to About"
-//           onPress={() => this.props.navigation.navigate('About')}
-// />
-//       </View>
-//     )
-//   }
-// }
